@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[\App\Http\Controllers\SiteController::class,'home']);
-Route::get('/form',[\App\Http\Controllers\SiteController::class,'showForm']);
+Route::get('/', [\App\Http\Controllers\SiteController::class, 'home']);
+Route::get('/form', [\App\Http\Controllers\SiteController::class, 'showForm'])->name('form');
 
+Route::post('/form', [\App\Http\Controllers\SiteController::class, 'temperature'])->name('form.temperature');

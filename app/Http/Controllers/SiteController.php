@@ -39,7 +39,9 @@ class SiteController extends Controller
                 ]
         ]);
     }
-    public function showForm(){
+
+    public function showForm()
+    {
 
         return view('form', ['data' =>
             [
@@ -47,6 +49,17 @@ class SiteController extends Controller
                 ['name' => 'contact', 'link' => '/contact'],
                 ['name' => 'about', 'link' => '/about']
 
-            ],]);
+            ],
+            'names' => [
+                'input 1', 'input 2', 'temperature'
+            ],
+        ]);
     }
+
+    public function temperature(Request $request)
+    {
+        $kelvin = $request->post('temperature') + 273;
+        return redirect()->route('form')->with('success', $kelvin);
+    }
+
 }

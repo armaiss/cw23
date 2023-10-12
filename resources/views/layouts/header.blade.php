@@ -20,9 +20,9 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            @foreach($data as $value)
+            @foreach( $data as $value)
             <li class="nav-item active">
-                <a class="nav-link" href="{{$value['link']}}">{{$value['name']}} <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ $value['link']}}">{{ $value['name']}} <span class="sr-only">(current)</span></a>
             </li>
             @endforeach
 
@@ -34,7 +34,7 @@
     </div>
 </nav>
 
-@yield('content')
+{{--@yield('content')--}}
 
 </body>
 </html>
